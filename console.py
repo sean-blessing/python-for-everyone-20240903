@@ -2,6 +2,7 @@
 def print_welcome(message="Welcome! Glad you are here!"):
     print("=" * len(message))
     print(message)
+    print(f"console.print_welcome().__name__: {__name__}")
     print("=" * len(message) + "\n")
     
 def validate_int_within_range(prompt, min_val, max_val):
@@ -33,4 +34,9 @@ def validate_required_string(prompt, str1, str2):
         else:
             valid_entry = True
     return ret_str
-    
+
+def even_odd_check(number):
+    if number % 2 == 0:
+        print("This is an even number")
+    else:
+        print("This is an Odd number") 

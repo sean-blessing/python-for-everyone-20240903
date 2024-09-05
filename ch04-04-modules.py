@@ -20,6 +20,7 @@ import sys
 
 def main():
     print_welcome("Welcome to the Modules application demo!")
+    print(f"ch04-04-modules.py main function, __name__ is {__name__}")
     choice = "y"
     while choice == "y":
         nbr1 = validate_int_within_range("Enter Number 1 (within range 1 to 6): ", 1, 6)
@@ -31,6 +32,7 @@ def main():
         
         choice = validate_required_string("Continue (y/n)? ", "y", "n")
     print("Bye")
-    
+
+# main()
 if __name__ == "__main__":
     main()
