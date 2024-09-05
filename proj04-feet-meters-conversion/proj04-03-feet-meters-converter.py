@@ -8,11 +8,11 @@ def main():
         menu_option = input("Select a conversion (a/b): ").lower()
         
         if menu_option == "a":
-            feet = float(input("Enter feet: "))
+            feet = get_float("Enter feet: ")
             meters = feet_to_meters(feet)
             print(f"{round(meters,2)} Meters\n")
         elif menu_option == "b":
-            meters = float(input("Enter meters: "))
+            meters = get_float("Enter meters: ")
             feet = meters_to_feet(meters)
             print(f"{round(feet,2)} Feet\n")
 
@@ -20,6 +20,17 @@ def main():
     
     print("Bye")
 
+def get_float(prompt):
+    valid_entry = False
+    float_nbr = 0.0
+    while not valid_entry:
+        try:
+            float_nbr = float(input(prompt))
+            valid_entry = True
+        except:
+            print("Invalid entry. Enter a valid float number.")
+    return float_nbr    
+    
 def display_menu():
     print("Conversions Menu:")
     print("a. Feet to Meters")

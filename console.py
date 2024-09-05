@@ -35,6 +35,18 @@ def validate_required_string(prompt, str1, str2):
             valid_entry = True
     return ret_str
 
+# user entry (command) must be in the list of acceptable commands
+def validate_menu_option(prompt, commands):
+    command = ""
+    valid_entry = False
+    while not valid_entry:
+        command = input(prompt)
+        if command in commands:
+            valid_entry = True
+        else:
+            print("Invalid command. Please try again.")
+    return command
+
 def even_odd_check(number):
     if number % 2 == 0:
         print("This is an even number")
