@@ -9,7 +9,13 @@ def validate_int_within_range(prompt, min_val, max_val):
     nbr = 0
     valid_entry = False
     while not valid_entry:
-        nbr = int(input(prompt))
+        nbr_str = input(prompt)
+        # validate whole number w/ isdigit() function
+        if nbr_str.isdigit():
+            nbr = int(nbr_str)
+        else:
+            print("Error: please enter a valid whole number")
+            continue            
         if nbr < min_val:
             print(f'Error: please enter value greater than or equal to {min_val}.')
             continue
@@ -51,4 +57,5 @@ def even_odd_check(number):
     if number % 2 == 0:
         print("This is an even number")
     else:
-        print("This is an Odd number") 
+        print("This is an Odd number")
+        
